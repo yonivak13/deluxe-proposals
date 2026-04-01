@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposition Provence - Henderson - DF-2025-06-12</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Jost', sans-serif;
+            font-weight: 300;
+            color: #1A1410;
+            line-height: 1.6;
+            background: #FFFFFF;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: #FFFFFF;
+            padding: 30px 0;
+            border-bottom: 1px solid #F7F4EF;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 500;
+            color: #1A1410;
+            letter-spacing: 1px;
+        }
+        
+        .header-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .reference {
+            font-size: 14px;
+            color: #9A8B78;
+            font-weight: 400;
+        }
+        
+        .badge {
+            background: #C9A96E;
+            color: #FFFFFF;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .hero {
+            position: relative;
+            height: 500px;
+            background-image: url('https://images.unsplash.com/photo-1771016046408-bfab706c7954?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTI2MjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzUwNTExNDV8&ixlib=rb-4.1.0&q=80&w=1080');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #1A1410;
+            opacity: 0.5;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: #FFFFFF;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 64px;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .hero-tagline {
+            font-size: 20px;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+        
+        .logistics {
+            background: #F7F4EF;
+            padding: 40px 0;
+        }
+        
+        .logistics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .logistics-item {
+            text-align: center;
+        }
+        
+        .logistics-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #9A8B78;
+            margin-bottom: 8px;
+            font-weight: 400;
+        }
+        
+        .logistics-value {
+            font-size: 18px;
+            color: #1A1410;
+            font-weight: 400;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 42px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #1A1410;
+        }
+        
+        .programme-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .tour-option {
+            background: #FFFFFF;
+            border: 1px solid #F7F4EF;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 2px;
+        }
+        
+        .tour-option h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #1A1410;
+        }
+        
+        .tour-description {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            color: #1A1410;
+        }
+        
+        .tour-highlights {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .tour-highlights li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        
+        .tour-highlights li::before {
+            content: '•';
+            position: absolute;
+            left: 10px;
+            color: #C9A96E;
+            font-size: 20px;
+        }
+        
+        .why-this-works {
+            background: #F7F4EF;
+            padding: 30px;
+            margin-top: 25px;
+            border-left: 3px solid #C9A96E;
+        }
+        
+        .why-this-works h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #1A1410;
+        }
+        
+        .why-this-works p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #1A1410;
+        }
+        
+        .pricing-section {
+            background: #1A1410;
+            color: #FFFFFF;
+            padding: 80px 0;
+        }
+        
+        .pricing-section .section-title {
+            color: #FFFFFF;
+        }
+        
+        .pricing-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .pricing-notice {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #F7F4EF;
+        }
+        
+        .pricing-detail {
+            font-size: 15px;
+            color: #C9A96E;
+            margin-bottom: 10px;
+        }
+        
+        .price-includes {
+            margin-top: 50px;
+            text-align: left;
+            background: rgba(249, 244, 239, 0.05);
+            padding: 35px;
+            border-radius: 2px;
+        }
+        
+        .price-includes h4 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #C9A96E;
+        }
+        
+        .price-includes ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .price-includes li {
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 15px;
+            color: #F7F4EF;
+        }
+        
+        .price-includes li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #C9A96E;
+            font-weight: 400;
+        }
+        
+        .agent-notes {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            border-left: 4px solid #C9A96E;
+            padding: 40px;
+            margin-top: -40px;
+            margin-bottom: 60px;
+            box-shadow: 0 2px 10px rgba(26, 20, 16, 0.05);
+        }
+        
+        .agent-notes h3 {
+            font-size: 28px;
+            margin-bottom: 25px;
+            color: #1A1410;
+        }
+        
+        .note-section {
+            margin-bottom: 25px;
+        }
+        
+        .note-section h4 {
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #C9A96E;
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+        
+        .note-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .note-section li {
+            padding: 6px 0;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #1A1410;
+        }
+        
+        .note-section p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #1A1410;
+        }
+        
+        footer {
+            background: #F7F4EF;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            font-size: 14px;
+            color: #9A8B78;
+            line-height: 1.8;
+        }
+        
+        .footer-content a {
+            color: #1A1410;
+            text-decoration: none;
+        }
+        
+        .footer-content a:hover {
+            color: #C9A96E;
+        }
+        
+        .photo-credit {
+            margin-bottom: 15px;
+            font-size: 13px;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 42px;
+            }
+            
+            .hero-tagline {
+                font-size: 16px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .tour-option {
+                padding: 25px;
+            }
+            
+            .tour-option h3 {
+                font-size: 26px;
+            }
+            
+            .agent-notes {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">DELUXE FRANCE</div>
+                <div class="header-meta">
+                    <div class="reference">DF-2025-06-12 · 12 janvier 2025</div>
+                    <div class="badge">Proposition Agent</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Authentic Luberon Provence</h1>
+            <div class="hero-tagline">A curated day of art, wine, and market soul</div>
+        </div>
+    </section>
+
+    <section class="logistics">
+        <div class="container">
+            <div class="logistics-grid">
+                <div class="logistics-item">
+                    <div class="logistics-label">Client</div>
+                    <div class="logistics-value">Mr. & Mrs. James Henderson</div>
+                </div>
+                <div class="logistics-item">
+                    <div class="logistics-label">Date</div>
+                    <div class="logistics-value">12 juin 2025</div>
+                </div>
+                <div class="logistics-item">
+                    <div class="logistics-label">Pickup</div>
+                    <div class="logistics-value">Le Couvent des Minimes, 09:00</div>
+                </div>
+                <div class="logistics-item">
+                    <div class="logistics-label">Pax</div>
+                    <div class="logistics-value">2 personnes</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Programme Proposé</h2>
+            <div class="programme-content">
+                
+                <div class="tour-option">
+                    <h3>Option 1: Provence Art & Wine Experience</h3>
+                    <p class="tour-description"><em>Our recommended choice for the Hendersons — combining contemporary art, authentic market atmosphere, serious wine tasting at a premier estate, and exceptional dining with panoramic views.</em></p>
+                    
+                    <ul class="tour-highlights">
+                        <li><strong>09:00</strong> — Departure from Le Couvent des Minimes in premium Mercedes vehicle with private English-speaking guide</li>
+                        <li><strong>09:45</strong> — Isle-sur-la-Sorgue morning market: authentic Provençal atmosphere, antiques, local produce, artisan stands. Perfect for Sarah's love of local markets and genuine Provence.</li>
+                        <li><strong>11:30</strong> — Private visit to contemporary art foundation or gallery in the Luberon (such as Fondation Vincent Van Gogh Arles or a curated private collection). Tailored to Sarah's contemporary art interests.</li>
+                        <li><strong>13:15</strong> — Lunch at a exceptional restaurant with panoramic views (such as La Bastide de Gordes or similar Michelin-quality establishment). Menu adapted for Sarah (no red meat), local seasonal ingredients, wine pairings available.</li>
+                        <li><strong>15:30</strong> — Private tasting at a prestigious wine estate (serious producer, not tourist cave). Options include Château La Canorgue, Château de Mille, or similar domaine producing exceptional Luberon and Côtes du Rhône wines. Extended tasting with the winemaker or cellar master — ideal for James's serious wine collecting interests.</li>
+                        <li><strong>17:30</strong> — Scenic drive through perched villages: Gordes, Roussillon, or Ménerbes (time permitting, photo stops only)</li>
+                        <li><strong>18:30</strong> — Return to Le Couvent des Minimes</li>
+                    </ul>
+                    
+                    <div class="why-this-works">
+                        <h4>Why This Works for Your Clients</h4>
+                        <p>The Hendersons have sophisticated palates from Burgundy and Tuscany — this avoids tourist traps entirely. Morning market immersion gives Sarah the authentic Provence soul she seeks. The art visit is curated, not mainstream. Wine tasting is at producer level with access James will appreciate as a serious collector. Lunch venue delivers the view and quality they expect. Timing respects their 18:30 return request. This is Provence for connoisseurs, not first-timers.</p>
+                    </div>
+                </div>
+
+                <div class="tour-option">
+                    <h3>Option 2: Gordes, Isle-sur-la-Sorgue & Châteauneuf-du-Pape</h3>
+                    <p class="tour-description"><em>A wine-focused alternative with the legendary Châteauneuf-du-Pape appellation.</em></p>
+                    
+                    <ul class="tour-highlights">
+                        <li><strong>09:00</strong> — Departure from Le Couvent des Minimes</li>
+                        <li><strong>09:45</strong> — Gordes village: iconic perched village, narrow streets, panoramic viewpoints</li>
+                        <li><strong>10:45</strong> — Isle-sur-la-Sorgue market experience (as Option 1)</li>
+                        <li><strong>12:30</strong> — Gourmet lunch near Gordes or en route (adapted menu for Sarah)</li>
+                        <li><strong>14:30</strong> — Châteauneuf-du-Pape: private visit and extended tasting at prestigious domaine (Château de Beaucastel, Domaine du Vieux Télégraphe, or similar). World-class wines, vineyard tour, serious cellar experience for James.</li>
+                        <li><strong>16:45</strong> — Return journey through vineyards and Rhône Valley landscapes</li>
+                        <li><strong>18:30</strong> — Arrival Le Couvent des Minimes</li>
+                    </ul>
+                    
+                    <div class="why-this-works">
+                        <h4>Why This Works for Your Clients</h4>
+                        <p>Châteauneuf-du-Pape is a pilgrimage for serious collectors like James — legendary terroir, world-renowned estates, wines with gravitas. The morning still delivers Sarah's market fix and Provence beauty. Slightly more wine-weighted than Option 1, but keeps the authentic, non-touristy approach they demand. Best if James prioritizes access to CDP's top producers.</p>
+                    </div>
+                </div>
+
+                <div class="tour-option">
+                    <h3>Option 3: Private Luberon Villages & Wine Estates</h3>
+                    <p class="tour-description"><em>A villages-and-vineyards day with maximum Luberon immersion.</em></p>
+                    
+                    <ul class="tour-highlights">
+                        <li><strong>09:00</strong> — Departure from Le Couvent des Minimes</li>
+                        <li><strong>09:30</strong> — Lourmarin: elegant village, artisan shops, 15th-century château (exterior), café culture</li>
+                        <li><strong>10:45</strong> — Bonnieux or Ménerbes: perched villages, breathtaking viewpoints, authentic Provence atmosphere</li>
+                        <li><strong>12:00</strong> — Wine tasting at first Luberon estate (organic or biodynamic producer preferred)</li>
+                        <li><strong>13:15</strong> — Lunch at countryside restaurant or wine estate (view, local produce, Sarah's dietary needs respected)</li>
+                        <li><strong>15:00</strong> — Second wine estate visit: serious tasting session, cellar tour, direct producer access for James</li>
+                        <li><strong>16:45</strong> — Roussillon ochre cliffs or Lacoste village (quick stop, time permitting)</li>
+                        <li><strong>18:30</strong> — Return to Le Couvent des Minimes</li>
+                    </ul>
+                    
+                    <div class="why-this-works">
+                        <h4>Why This Works for Your Clients</h4>
+                        <p>Maximum village immersion without rushing. Two wine estates allow comparison of Luberon styles and terroirs — educational for James. Villages like Lourmarin offer charm without Gordes-level crowds. Still authentic, still gourmet, but more relaxed pacing. Best if they want deeper Luberon exploration rather than single iconic appellation.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section">
+        <div class="container">
+            <h2 class="section-title">Tarification</h2>
+            <div class="pricing-content">
+                <p class="pricing-notice">Pricing to be confirmed based on final programme selection, premium vehicle type, and specific estate/restaurant reservations.</p>
+                <p class="pricing-detail">Quote sur devis — detailed pricing will be provided within 48 hours of confirmation.</p>
+                
+                <div class="price-includes">
+                    <h4>Inclusions Standard</h4>
+                    <ul>
+                        <li>Premium vehicle (Mercedes E-Class, V-Class, or similar) with professional chauffeur</li>
+                        <li>Private English-speaking expert guide for full day</li>
+                        <li>All wine estate visits and tastings (private access arranged)</li>
+                        <li>Restaurant reservation and coordination</li>
+                        <li>Entrance fees where applicable</li>
+                        <li>Bottled water, refreshments in vehicle</li>
+                        <li>Parking and tolls</li>
+                        <li>Full concierge support before and during</li>
+                    </ul>
+                    <br>
+                    <h4>Non Inclus</h4>
+                    <ul>
+                        <li>Lunch and beverages (guests settle directly, or can be included in quote if preferred)</li>
+                        <li>Wine purchases at estates</li>
+                        <li>Gratuities for guide and driver (at guests' discretion)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="agent-notes">
+            <h3>Agent Notes — Amanda Collins</h3>
+            
+            <div class="note-section">
+                <h4>Confirmed Client Preferences</h4>
+                <ul>
+                    <li>Serious wine collector (James) — requires producer-level access, not tourist caves</li>
+                    <li>Contemporary art enthusiast (Sarah) — curated art visit strongly recommended</li>
+                    <li>Local market experience desired — Isle-sur-la-Sorgue Thursday market perfect timing</li>
+                    <li>No red meat for Sarah — all restaurants will be briefed</li>
+                    <li>Very well-traveled (Burgundy, Tuscany) — expect sophisticated standards</li>
+                    <li>Authentic Provence, no tourist traps — itinerary designed accordingly</li>
+                    <li>Return by 18:30 to Le Couvent des Minimes — timing confirmed in all options</li>
+                    <li>Premium vehicle requested — Mercedes E-Class or V-Class recommended</li>
+                    <li>Virtuoso booking via Brownell Travel Birmingham AL</li>
+                </ul>
+            </div>
+            
+            <div class="note-section">
+                <h4>Information Needed to Confirm</h4>
+                <ul>
+                    <li>Which programme option (1, 2, or 3) — or custom combination desired?</li>
+                    <li>Confirmation of guide requirement (strongly recommended for this profile)</li>
+                    <li>Preferred premium vehicle type (standard Mercedes E-Class or spacious V-Class?)</li>
+                    <li>Restaurant preference: do clients want lunch cost included in package or settle directly?</li>
+                    <li>Any specific wine estates James has on his wish list?</li>
+                    <li>Art preferences for Sarah: more contemporary, modern, or open to local Provençal artists?</li>
+                </ul>
+            </div>
+            
+            <div class="note-section">
+                <h4>Suggested Confirmation Deadline</h4>
+                <p>Please confirm programme selection by <strong>15 janvier 2025</strong> to secure preferred wine estates and restaurant reservations. June is high season in Provence — early confirmation ensures access to top-tier experiences the Hendersons expect. Detailed pricing will follow within 48 hours of your confirmation.</p>
+            </div>
+            
+            <div class="note-section">
+                <h4>Our Recommendation</h4>
+                <p><strong>Option 1 (Art & Wine Experience)</strong> is the best fit for this sophisticated Boston couple. It delivers everything they've requested: authentic market, serious wine at producer level, contemporary art tailored to Sarah, exceptional lunch with view, and avoids all tourist traps. Perfect for clients who've done Burgundy and Tuscany — this is Provence for connoisseurs.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p class="photo-credit">Hero photograph: Shalev Cohen via Unsplash</p>
+                <p><a href="mailto:info@deluxefrance.com">info@deluxefrance.com</a> · +33 9 72 30 10 31 · <a href="http://deluxefrance.com">deluxefrance.com</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
