@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposition Deluxe France DMC - Henderson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Jost', sans-serif;
+            font-weight: 300;
+            color: #1A1410;
+            line-height: 1.7;
+            background: #FFFFFF;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            line-height: 1.3;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: #FFFFFF;
+            padding: 30px 0;
+            border-bottom: 1px solid #F7F4EF;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: #1A1410;
+            letter-spacing: 1px;
+        }
+        
+        .header-meta {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: #9A8B78;
+        }
+        
+        .badge {
+            background: #C9A96E;
+            color: #FFFFFF;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        .hero {
+            position: relative;
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            background-image: url('https://images.unsplash.com/photo-1593715857998-b8745c886db5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTI2MjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzUwNDk3MzN8&ixlib=rb-4.1.0&q=80&w=1080');
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 0;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #1A1410;
+            opacity: 0.5;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: #FFFFFF;
+            padding: 40px;
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        
+        .hero-tagline {
+            font-size: 20px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            opacity: 0.95;
+        }
+        
+        .logistics-band {
+            background: #F7F4EF;
+            padding: 40px 0;
+        }
+        
+        .logistics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+        
+        .logistics-item h3 {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #9A8B78;
+            margin-bottom: 10px;
+            font-family: 'Jost', sans-serif;
+            font-weight: 400;
+        }
+        
+        .logistics-item p {
+            font-size: 18px;
+            color: #1A1410;
+            font-weight: 400;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 42px;
+            margin-bottom: 40px;
+            color: #1A1410;
+            font-weight: 400;
+        }
+        
+        .programme-content {
+            background: #FFFFFF;
+        }
+        
+        .itinerary-item {
+            margin-bottom: 35px;
+            padding-left: 25px;
+            border-left: 2px solid #C9A96E;
+        }
+        
+        .itinerary-item h4 {
+            font-size: 22px;
+            color: #1A1410;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        
+        .itinerary-item p {
+            font-size: 16px;
+            color: #1A1410;
+            line-height: 1.8;
+        }
+        
+        .pricing-section {
+            background: #1A1410;
+            color: #FFFFFF;
+            padding: 80px 0;
+        }
+        
+        .pricing-section .section-title {
+            color: #FFFFFF;
+        }
+        
+        .pricing-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .pricing-note {
+            font-size: 18px;
+            line-height: 1.9;
+            margin-bottom: 30px;
+            color: #F7F4EF;
+        }
+        
+        .price-highlight {
+            color: #C9A96E;
+            font-weight: 400;
+            font-size: 20px;
+        }
+        
+        .pricing-details {
+            background: rgba(201, 169, 110, 0.1);
+            padding: 30px;
+            border-radius: 4px;
+            margin-top: 30px;
+        }
+        
+        .pricing-details h4 {
+            color: #C9A96E;
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Jost', sans-serif;
+        }
+        
+        .pricing-details ul {
+            list-style: none;
+            font-size: 15px;
+            line-height: 2;
+        }
+        
+        .pricing-details li::before {
+            content: '•';
+            color: #C9A96E;
+            margin-right: 12px;
+        }
+        
+        .agent-notes {
+            background: #FFFFFF;
+            border-left: 4px solid #C9A96E;
+            padding: 40px;
+            margin: 60px auto;
+            max-width: 900px;
+        }
+        
+        .agent-notes h3 {
+            font-size: 24px;
+            margin-bottom: 25px;
+            color: #1A1410;
+            font-weight: 500;
+        }
+        
+        .note-section {
+            margin-bottom: 25px;
+        }
+        
+        .note-section h4 {
+            font-size: 16px;
+            color: #C9A96E;
+            margin-bottom: 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Jost', sans-serif;
+        }
+        
+        .note-section ul {
+            list-style: none;
+            font-size: 15px;
+            line-height: 1.9;
+        }
+        
+        .note-section li {
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .note-section li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: #9A8B78;
+        }
+        
+        footer {
+            background: #F7F4EF;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 14px;
+            color: #9A8B78;
+            line-height: 1.8;
+        }
+        
+        footer a {
+            color: #1A1410;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            color: #C9A96E;
+        }
+        
+        .divider {
+            margin: 0 8px;
+            color: #C9A96E;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 42px;
+            }
+            
+            .hero-tagline {
+                font-size: 16px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .logistics-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .section {
+                padding: 50px 0;
+            }
+            
+            .agent-notes {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">DELUXE FRANCE</div>
+                <div class="header-meta">
+                    <span>DF-2025-06-12</span>
+                    <span>30 janvier 2025</span>
+                    <span class="badge">Proposition Agent</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Golden Villages of Luberon</h1>
+            <div class="hero-tagline">A private journey through authentic Provence</div>
+        </div>
+    </section>
+
+    <section class="logistics-band">
+        <div class="container">
+            <div class="logistics-grid">
+                <div class="logistics-item">
+                    <h3>Client</h3>
+                    <p>Mr. & Mrs. James Henderson</p>
+                </div>
+                <div class="logistics-item">
+                    <h3>Date</h3>
+                    <p>12 juin 2025</p>
+                </div>
+                <div class="logistics-item">
+                    <h3>Pickup</h3>
+                    <p>Le Couvent des Minimes, 09:00</p>
+                </div>
+                <div class="logistics-item">
+                    <h3>Pax</h3>
+                    <p>2 personnes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section programme-content">
+        <div class="container">
+            <h2 class="section-title">Programme proposé</h2>
+            
+            <div class="itinerary-item">
+                <h4>09:00 — Départ du Couvent des Minimes</h4>
+                <p>Accueil par votre guide-expert privé en berline premium. Route vers le cœur du Luberon avec contexte historique et culturel de la région.</p>
+            </div>
+
+            <div class="itinerary-item">
+                <h4>09:45 — Marché provençal authentique</h4>
+                <p>Immersion dans un marché local (Apt ou Coustellet selon calendrier) : producteurs, artisans, couleurs et parfums de Provence. Temps libre pour découvrir les étals, rencontrer les producteurs, et saisir l'essence du terroir provençal.</p>
+            </div>
+
+            <div class="itinerary-item">
+                <h4>11:00 — Gordes et Roussillon</h4>
+                <p>Découverte de Gordes, village perché avec vue panoramique sur la vallée. Balade dans les ruelles de pierre blonde. Visite de Roussillon et ses falaises d'ocre spectaculaires — paysages dignes d'un tableau impressionniste. Temps pour l'art et les galeries locales selon l'intérêt de Sarah.</p>
+            </div>
+
+            <div class="itinerary-item">
+                <h4>13:00 — Déjeuner gastronomique avec vue</h4>
+                <p>Restaurant de référence avec terrasse panoramique sur la vallée du Luberon. Cuisine provençale raffinée, produits du marché du matin, accord mets-vins soigné. Menu adapté (options poisson, volaille, légumes pour Sarah). Moment privilégié, pas de tourisme de masse.</p>
+            </div>
+
+            <div class="itinerary-item">
+                <h4>15:30 — Domaine viticole confidentiel</h4>
+                <p>Visite privée d'un domaine de caractère, vigneron passionné et engagé (bio/biodynamie). Caves historiques, explication du terroir et des cépages du Luberon. Dégustation commentée de 4-5 cuvées parcellaires avec le producteur — niveau adapté à un collectionneur averti comme James. Possibilité d'achat direct.</p>
+            </div>
+
+            <div class="itinerary-item">
+                <h4>17:30 — Route du retour</h4>
+                <p>Traversée des paysages dorés du Luberon, champs de lavande (selon saison), villages perchés. Échanges avec le guide sur les découvertes de la journée.</p>
+            </div>
+
+            <div class="itinerary-item">
+                <h4>18:30 — Retour au Couvent des Minimes</h4>
+                <p>Fin de cette journée d'immersion dans la vraie Provence.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section">
+        <div class="container">
+            <h2 class="section-title">Tarification</h2>
+            <div class="pricing-content">
+                <p class="pricing-note">
+                    Ce programme sur-mesure est en cours d'élaboration tarifaire. Le devis détaillé vous sera transmis sous 48 heures avec options de domaines viticoles, restaurants sélectionnés, et niveau de prestation guide.
+                </p>
+                <p class="pricing-note">
+                    La prestation comprendra : véhicule premium avec chauffeur-guide expert bilingue, entrées domaine et dégustation privée, support logistique complet, coordination réservations.
+                </p>
+                <p class="price-highlight">Tarif indicatif : sur devis – niveau luxury</p>
+                
+                <div class="pricing-details">
+                    <h4>Inclus dans la formule</h4>
+                    <ul>
+                        <li>Guide privé expert en histoire, gastronomie et vins de Provence</li>
+                        <li>Véhicule premium climatisé (berline ou van luxe selon disponibilité)</li>
+                        <li>Visite privée et dégustation au domaine viticole</li>
+                        <li>Coordination et réservations (restaurant, domaine)</li>
+                        <li>Eau minérale à bord</li>
+                        <li>Flexibilité totale du programme selon météo et envies</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-details" style="margin-top: 20px;">
+                    <h4>Non inclus</h4>
+                    <ul>
+                        <li>Déjeuner gastronomique (budget indicatif : 120-180€ par personne avec vins)</li>
+                        <li>Achats personnels au marché et au domaine</li>
+                        <li>Pourboires guide (à discrétion)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="agent-notes">
+            <h3>Notes Agent — Amanda Collins</h3>
+            
+            <div class="note-section">
+                <h4>Contraintes confirmées</h4>
+                <ul>
+                    <li>Sarah ne consomme pas de viande rouge — menu adapté confirmé avec restaurant</li>
+                    <li>Retour impératif avant 18:30 au Couvent des Minimes</li>
+                    <li>Clientèle très voyagée (Bourgogne, Toscane) — attente d'expérience authentique niveau supérieur</li>
+                    <li>James collectionneur sérieux : domaine confirmé de niveau expert, pas cave touristique</li>
+                    <li>Sarah intéressée art contemporain : sélection galeries à Gordes/Roussillon possible</li>
+                </ul>
+            </div>
+
+            <div class="note-section">
+                <h4>Informations à confirmer</h4>
+                <ul>
+                    <li>Préférence langue guide (anglais/français) — à préciser</li>
+                    <li>Confirmation lieu de retour (assumé identique pickup sauf instruction contraire)</li>
+                    <li>Tarification finale en attente — devis détaillé sous 48h</li>
+                    <li>Validation restaurant définitif selon disponibilité (3 options présélectionnées)</li>
+                    <li>Choix domaine viticole final parmi 2 options haut de gamme identifiées</li>
+                </ul>
+            </div>
+
+            <div class="note-section">
+                <h4>Action requise</h4>
+                <ul>
+                    <li>Confirmer niveau de prestation souhaité pour finalisation tarif</li>
+                    <li>Deadline confirmation souhaitée : 15 février 2025 (réservations restaurants et domaines)</li>
+                    <li>Option pré-réservation possible moyennant acompte si dates sensibles</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p style="margin-bottom: 8px; font-size: 13px; color: #9A8B78;">Photo: Thomas Despeyroux via Unsplash</p>
+            <p>
+                <a href="mailto:info@deluxefrance.com">info@deluxefrance.com</a>
+                <span class="divider">·</span>
+                <a href="tel:+33972301031">+33 9 72 30 10 31</a>
+                <span class="divider">·</span>
+                <a href="https://deluxefrance.com" target="_blank">deluxefrance.com</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
