@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposition Deluxe France DMC - Yonivak</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Jost', sans-serif;
+            font-weight: 300;
+            color: #1A1410;
+            line-height: 1.6;
+            background-color: #FFFFFF;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+        
+        header {
+            background-color: #FFFFFF;
+            padding: 30px 0;
+            border-bottom: 1px solid #F7F4EF;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: #1A1410;
+            letter-spacing: 1px;
+        }
+        
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .reference {
+            font-family: 'Jost', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            color: #9A8B78;
+            letter-spacing: 0.5px;
+        }
+        
+        .badge {
+            background-color: #C9A96E;
+            color: #FFFFFF;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .hero {
+            position: relative;
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 0;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(26, 20, 16, 0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: #FFFFFF;
+            padding: 0 20px;
+            max-width: 900px;
+        }
+        
+        .hero h1 {
+            font-size: 64px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .hero-tagline {
+            font-size: 20px;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+        
+        .logistics {
+            background-color: #F7F4EF;
+            padding: 40px 0;
+        }
+        
+        .logistics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .logistics-item {
+            text-align: center;
+        }
+        
+        .logistics-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #9A8B78;
+            margin-bottom: 8px;
+            font-weight: 400;
+        }
+        
+        .logistics-value {
+            font-size: 18px;
+            color: #1A1410;
+            font-weight: 400;
+        }
+        
+        .logistics-missing {
+            color: #C9A96E;
+            font-style: italic;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            font-size: 42px;
+            margin-bottom: 30px;
+            color: #1A1410;
+            text-align: center;
+        }
+        
+        .programme-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+        }
+        
+        .programme-item {
+            padding: 30px 0;
+            border-bottom: 1px solid #F7F4EF;
+        }
+        
+        .programme-item:last-child {
+            border-bottom: none;
+        }
+        
+        .programme-item h3 {
+            font-size: 28px;
+            color: #1A1410;
+            margin-bottom: 15px;
+        }
+        
+        .programme-item p {
+            font-size: 16px;
+            color: #9A8B78;
+            line-height: 1.8;
+        }
+        
+        .pricing-section {
+            background-color: #1A1410;
+            color: #FFFFFF;
+        }
+        
+        .pricing-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .pricing-section .section-title {
+            color: #FFFFFF;
+        }
+        
+        .pricing-message {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .price-highlight {
+            color: #C9A96E;
+            font-size: 24px;
+            font-weight: 400;
+            margin-top: 20px;
+        }
+        
+        .agent-notes {
+            background-color: #F7F4EF;
+            padding: 40px;
+            border-left: 4px solid #C9A96E;
+            margin: 40px auto;
+            max-width: 900px;
+        }
+        
+        .agent-notes h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #1A1410;
+        }
+        
+        .agent-notes-section {
+            margin-bottom: 25px;
+        }
+        
+        .agent-notes-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .agent-notes-section h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #C9A96E;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .agent-notes-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .agent-notes-section li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 15px;
+            color: #1A1410;
+        }
+        
+        .agent-notes-section li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #C9A96E;
+        }
+        
+        .agent-notes-section p {
+            font-size: 15px;
+            color: #1A1410;
+            line-height: 1.8;
+        }
+        
+        .alert-box {
+            background-color: #FFFFFF;
+            border: 2px solid #C9A96E;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+        
+        .alert-box strong {
+            color: #C9A96E;
+            font-weight: 500;
+        }
+        
+        footer {
+            background-color: #1A1410;
+            color: #9A8B78;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 13px;
+        }
+        
+        footer a {
+            color: #C9A96E;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            color: #FFFFFF;
+        }
+        
+        .footer-content {
+            margin-bottom: 15px;
+        }
+        
+        .photo-credit {
+            font-size: 11px;
+            opacity: 0.6;
+            margin-top: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 42px;
+            }
+            
+            .hero-tagline {
+                font-size: 16px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .logistics-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .agent-notes {
+                padding: 25px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                height: 400px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .logistics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">DELUXE FRANCE</div>
+                <div class="header-right">
+                    <div class="reference">DF-20250130</div>
+                    <div class="badge">Proposition Agent</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1502790671504-542ad42d5189?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTI2MjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzUwNjIyNzl8&ixlib=rb-4.1.0&q=80&w=1080');">
+        <div class="hero-content">
+            <h1>Provence Awaits Your Discovery</h1>
+            <div class="hero-tagline">Crafting your bespoke French experience</div>
+        </div>
+    </div>
+
+    <div class="logistics">
+        <div class="container">
+            <div class="logistics-grid">
+                <div class="logistics-item">
+                    <div class="logistics-label">Agent</div>
+                    <div class="logistics-value">Yonivak</div>
+                </div>
+                <div class="logistics-item">
+                    <div class="logistics-label">Client</div>
+                    <div class="logistics-value logistics-missing">À préciser</div>
+                </div>
+                <div class="logistics-item">
+                    <div class="logistics-label">Date</div>
+                    <div class="logistics-value logistics-missing">À confirmer</div>
+                </div>
+                <div class="logistics-item">
+                    <div class="logistics-label">Passagers</div>
+                    <div class="logistics-value logistics-missing">À définir</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Votre Demande</h2>
+            <div class="programme-content">
+                <div class="programme-item">
+                    <p style="text-align: center; font-size: 18px;">Nous avons bien reçu votre demande et sommes ravis de collaborer avec vous pour créer une expérience d'exception pour vos clients en Provence.</p>
+                </div>
+                <div class="programme-item">
+                    <p style="text-align: center;">Afin de vous proposer une offre personnalisée et parfaitement adaptée aux attentes de vos clients, nous aurions besoin de quelques informations complémentaires détaillées dans la section Notes Agent ci-dessous.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section">
+        <div class="container">
+            <h2 class="section-title">Tarification</h2>
+            <div class="pricing-content">
+                <div class="pricing-message">
+                    Une proposition tarifaire détaillée vous sera transmise dès réception des informations complémentaires nécessaires à l'élaboration de votre programme sur mesure.
+                </div>
+                <div class="price-highlight">
+                    Tarif sur devis personnalisé
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="agent-notes">
+            <h3>Notes Agent — Informations Requises</h3>
+            
+            <div class="alert-box">
+                <p><strong>Demande Incomplète :</strong> Nous avons reçu uniquement une signature automatique Outlook sans détails de demande. Pour établir une proposition adaptée, merci de nous transmettre les informations suivantes.</p>
+            </div>
+
+            <div class="agent-notes-section">
+                <h4>Informations Manquantes Essentielles</h4>
+                <ul>
+                    <li>Nom du client ou référence du dossier</li>
+                    <li>Nombre de passagers</li>
+                    <li>Date(s) de la mission souhaitée</li>
+                    <li>Lieu et heure de prise en charge</li>
+                    <li>Destination ou région ciblée en Provence</li>
+                    <li>Nature du service (transfert, visite guidée, mise à disposition)</li>
+                    <li>Durée du service (nombre de jours ou d'heures)</li>
+                    <li>Type de véhicule souhaité</li>
+                    <li>Guide francophone/anglophone requis ou non</li>
+                    <li>Budget ou fourchette tarifaire</li>
+                    <li>Préférences particulières des clients</li>
+                    <li>Lieu de dépose si différent du pickup</li>
+                </ul>
+            </div>
+
+            <div class="agent-notes-section">
+                <h4>Prochaines Étapes</h4>
+                <p>Merci de nous retourner ces informations dans les plus brefs délais. Notre équipe se tient à votre disposition pour toute question et restera réactive pour vous proposer une offre complète sous 48 heures ouvrées après réception des éléments.</p>
+            </div>
+
+            <div class="agent-notes-section">
+                <h4>Délai de Confirmation Suggéré</h4>
+                <p>Pour garantir la disponibilité optimale de nos services et véhicules premium, nous vous recommandons de confirmer votre réservation au moins 7 jours avant la date de service souhaitée.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="mailto:info@deluxefrance.com">info@deluxefrance.com</a> · 
+                <a href="tel:+33972301031">+33 9 72 30 10 31</a> · 
+                <a href="https://deluxefrance.com">deluxefrance.com</a>
+            </div>
+            <div class="photo-credit">
+                Photo: Mohammad Alizade via Unsplash
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
