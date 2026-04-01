@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provence Itinerary - Deluxe France DMC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Jost', sans-serif;
+            font-weight: 300;
+            color: #1A1410;
+            line-height: 1.6;
+            background: #FFFFFF;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        header {
+            background: #FFFFFF;
+            padding: 40px 0;
+            border-bottom: 1px solid #F7F4EF;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: #1A1410;
+            letter-spacing: 1px;
+        }
+        
+        .header-meta {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .reference {
+            font-size: 14px;
+            color: #9A8B78;
+            font-weight: 400;
+        }
+        
+        .badge {
+            background: #C9A96E;
+            color: #FFFFFF;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .hero {
+            position: relative;
+            height: 500px;
+            background-image: url('https://images.unsplash.com/photo-1725524689279-4acbba0011c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTI2MjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzUwNTYyNDR8&ixlib=rb-4.1.0&q=80&w=1080');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(26, 20, 16, 0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: #FFFFFF;
+            padding: 0 30px;
+        }
+        
+        .hero h1 {
+            font-size: 64px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .hero-tagline {
+            font-size: 20px;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+        
+        .logistics {
+            background: #F7F4EF;
+            padding: 50px 0;
+        }
+        
+        .logistics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+        
+        .logistics-item h3 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #9A8B78;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .logistics-item p {
+            font-size: 20px;
+            color: #1A1410;
+            font-weight: 400;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 42px;
+            margin-bottom: 40px;
+            color: #1A1410;
+        }
+        
+        .programme-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        
+        .programme-table th {
+            background: #F7F4EF;
+            padding: 20px;
+            text-align: left;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 600;
+            border-bottom: 2px solid #C9A96E;
+        }
+        
+        .programme-table td {
+            padding: 25px 20px;
+            border-bottom: 1px solid #F7F4EF;
+            vertical-align: top;
+        }
+        
+        .day-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: #C9A96E;
+        }
+        
+        .day-date {
+            font-size: 14px;
+            color: #9A8B78;
+            margin-top: 5px;
+        }
+        
+        .day-content h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #1A1410;
+        }
+        
+        .day-content p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #1A1410;
+        }
+        
+        .pricing-section {
+            background: #1A1410;
+            color: #FFFFFF;
+            padding: 80px 0;
+        }
+        
+        .pricing-section .section-title {
+            color: #FFFFFF;
+        }
+        
+        .pricing-notice {
+            background: rgba(201, 169, 110, 0.15);
+            border-left: 4px solid #C9A96E;
+            padding: 30px;
+            margin-top: 30px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        
+        .pricing-notice strong {
+            color: #C9A96E;
+            font-weight: 400;
+        }
+        
+        .agent-notes {
+            background: #FFFFFF;
+            border-left: 4px solid #C9A96E;
+            padding: 40px;
+            margin: 60px 0;
+        }
+        
+        .agent-notes h3 {
+            font-size: 28px;
+            margin-bottom: 25px;
+            color: #1A1410;
+        }
+        
+        .agent-notes h4 {
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            color: #C9A96E;
+            font-weight: 600;
+        }
+        
+        .agent-notes ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .agent-notes li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        .agent-notes li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #C9A96E;
+        }
+        
+        .tours-list {
+            background: #F7F4EF;
+            padding: 40px;
+            margin: 40px 0;
+            border-radius: 2px;
+        }
+        
+        .tours-list h3 {
+            font-size: 28px;
+            margin-bottom: 25px;
+            color: #1A1410;
+        }
+        
+        .tour-item {
+            background: #FFFFFF;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 3px solid #C9A96E;
+        }
+        
+        .tour-item h4 {
+            font-size: 20px;
+            color: #1A1410;
+            margin-bottom: 8px;
+        }
+        
+        .tour-item p {
+            font-size: 15px;
+            color: #9A8B78;
+            line-height: 1.6;
+        }
+        
+        footer {
+            background: #1A1410;
+            color: #9A8B78;
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        .footer-credit {
+            font-size: 13px;
+            margin-bottom: 20px;
+            opacity: 0.7;
+        }
+        
+        .footer-contact {
+            font-size: 15px;
+            color: #FFFFFF;
+        }
+        
+        .footer-contact a {
+            color: #C9A96E;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 42px;
+            }
+            
+            .hero-tagline {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .logistics-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .programme-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            header {
+                padding: 30px 0;
+            }
+            
+            .logo {
+                font-size: 26px;
+            }
+            
+            .section {
+                padding: 50px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">DELUXE FRANCE</div>
+                <div class="header-meta">
+                    <div class="reference">DF-2025-06-01 · January 2025</div>
+                    <div class="badge">Proposition Agent</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Provençal Heritage & Wine</h1>
+            <div class="hero-tagline">A curated journey through culture, gastronomy and terroir</div>
+        </div>
+    </section>
+
+    <section class="logistics">
+        <div class="container">
+            <div class="logistics-grid">
+                <div class="logistics-item">
+                    <h3>Client</h3>
+                    <p>Michael Turner's client</p>
+                </div>
+                <div class="logistics-item">
+                    <h3>Date</h3>
+                    <p>June 2025</p>
+                </div>
+                <div class="logistics-item">
+                    <h3>Pickup</h3>
+                    <p>Marseille Airport</p>
+                </div>
+                <div class="logistics-item">
+                    <h3>Pax</h3>
+                    <p>2 guests</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Programme Overview</h2>
+            <p style="font-size: 18px; line-height: 1.8; max-width: 900px; margin-bottom: 40px;">
+                This premium Provence experience has been designed for discerning travelers seeking an authentic immersion into the region's cultural heritage, viticultural excellence, and gastronomic traditions. Based in historic Avignon, your clients will explore the sun-drenched landscapes of the Luberon, discover UNESCO-protected monuments, and taste exceptional wines in the legendary Châteauneuf-du-Pape appellation.
+            </p>
+
+            <div class="tours-list">
+                <h3>Curated Experiences Included</h3>
+                
+                <div class="tour-item">
+                    <h4>Private Luberon Villages Tour</h4>
+                    <p>Full-day exploration of Gordes and Roussillon, two of Provence's most enchanting hilltop villages. Wander cobblestone streets, discover local artisan workshops, and capture breathtaking panoramic views. Includes lunch at a traditional restaurant with regional specialties.</p>
+                </div>
+                
+                <div class="tour-item">
+                    <h4>Châteauneuf-du-Pape Wine Tasting Experience</h4>
+                    <p>Private guided tour through prestigious estates in this legendary wine region. Meet winemakers, explore historic cellars, and taste premium cuvées. Your expert guide will share insights into the unique terroir and winemaking traditions that make these wines world-renowned.</p>
+                </div>
+                
+                <div class="tour-item">
+                    <h4>Private Avignon Historical Walking Tour</h4>
+                    <p>Intimate exploration of Avignon's rich papal heritage with a specialized local guide. Visit the imposing Palais des Papes, stroll the charming old town, and discover hidden squares and medieval architecture. Tour adapted to your clients' interests in history and culture.</p>
+                </div>
+            </div>
+
+            <div style="background: #F7F4EF; padding: 40px; margin-top: 50px;">
+                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; margin-bottom: 20px;">Premium Services Confirmed</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 10px 0; padding-left: 30px; position: relative; font-size: 16px;">
+                        <span style="position: absolute; left: 0; color: #C9A96E;">✓</span>
+                        VIP meet-and-greet service at Marseille Airport with expedited luggage assistance
+                    </li>
+                    <li style="padding: 10px 0; padding-left: 30px; position: relative; font-size: 16px;">
+                        <span style="position: absolute; left: 0; color: #C9A96E;">✓</span>
+                        Premium Mercedes V-Class vehicle for all transfers and private tours
+                    </li>
+                    <li style="padding: 10px 0; padding-left: 30px; position: relative; font-size: 16px;">
+                        <span style="position: absolute; left: 0; color: #C9A96E;">✓</span>
+                        Early check-in requested at hotel (subject to availability)
+                    </li>
+                    <li style="padding: 10px 0; padding-left: 30px; position: relative; font-size: 16px;">
+                        <span style="position: absolute; left: 0; color: #C9A96E;">✓</span>
+                        Gastronomic dinner reservation secured for Day 3 evening
+                    </li>
+                    <li style="padding: 10px 0; padding-left: 30px; position: relative; font-size: 16px;">
+                        <span style="position: absolute; left: 0; color: #C9A96E;">✓</span>
+                        English-speaking private guides for all cultural experiences
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section">
+        <div class="container">
+            <h2 class="section-title">Investment</h2>
+            <div class="pricing-notice">
+                <p><strong>Status:</strong> Booking confirmed with deposit received. Invoice and final itinerary have been forwarded to you.</p>
+                <p style="margin-top: 20px;">Final pricing will be communicated once all requested details are confirmed, including exact travel dates, specific pickup/dropoff times, and client names for reservations. This premium programme reflects the high-end nature of services, private guiding, luxury transportation, and exclusive access.</p>
+                <p style="margin-top: 20px;"><strong>Balance payment:</strong> Due 30 days prior to arrival date.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="agent-notes">
+                <h3>Agent Notes — Action Required</h3>
+                
+                <h4>Confirmed Details</h4>
+                <ul>
+                    <li>Premium budget tier with luxury services throughout</li>
+                    <li>Client preferences: wine, culture, food, history — all integrated into programme</li>
+                    <li>VIP meet-and-greet service at Marseille Airport arranged</li>
+                    <li>Mercedes V-Class premium vehicle assigned</li>
+                    <li>Gastronomic dinner reservation secured (venue TBC based on preferences)</li>
+                    <li>Early check-in requested at accommodation</li>
+                    <li>Deposit wired and booking confirmed</li>
+                </ul>
+
+                <h4>Missing Information Needed</h4>
+                <ul>
+                    <li><strong>Exact travel dates:</strong> Specific dates within June 2025 required to finalize all reservations</li>
+                    <li><strong>Pickup time:</strong> Flight arrival time at Marseille Airport for meet-and-greet coordination</li>
+                    <li><strong>Client names:</strong> Full names as per passport for hotel reservations and VIP services</li>
+                    <li><strong>Dropoff details:</strong> Final destination (airport, train station, hotel) and preferred time</li>
+                    <li><strong>Dietary requirements:</strong> Any allergies, preferences, or restrictions for gastronomic dinner reservation</li>
+                </ul>
+
+                <h4>Suggested Confirmation Deadline</h4>
+                <ul>
+                    <li>Please provide missing information by <strong>February 15, 2025</strong> to ensure optimal availability for all services, particularly for the gastronomic restaurant reservation and early check-in coordination</li>
+                    <li>June is peak season in Provence — earlier confirmation ensures best selection</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-credit">Photo credit: Simon Spring via Unsplash</div>
+            <div class="footer-contact">
+                <a href="mailto:info@deluxefrance.com">info@deluxefrance.com</a> · 
+                <a href="tel:+33972301031">+33 9 72 30 10 31</a> · 
+                <a href="https://deluxefrance.com" target="_blank">deluxefrance.com</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
