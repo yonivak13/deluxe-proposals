@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John's Luberon Villages Journey — Deluxe France</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Jost', sans-serif;
+            font-weight: 300;
+            color: #1A1410;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .header {
+            background: #FFFFFF;
+            border-bottom: 1px solid #F7F4EF;
+            padding: 12px 48px;
+            font-size: 12px;
+            color: #9A8B78;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .header-circle {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #C9A96E;
+        }
+        .hero {
+            position: relative;
+            height: 480px;
+            background-image: url('https://images.unsplash.com/photo-1612791096758-2e07fac80e8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTI2MjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzUxMTkwMjV8&ixlib=rb-4.1.0&q=80&w=1080');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: #1A1410;
+            opacity: 0.45;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: #FFFFFF;
+        }
+        .hero-eyebrow {
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: #C9A96E;
+            margin-bottom: 16px;
+            font-weight: 300;
+        }
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 52px;
+            font-weight: 400;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+        .hero-subtitle {
+            font-size: 14px;
+            color: #F7F4EF;
+            font-weight: 300;
+        }
+        .hero-credit {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            font-size: 10px;
+            color: #9A8B78;
+            opacity: 0.7;
+            z-index: 1;
+        }
+        .section-welcome {
+            background: #F7F4EF;
+            padding: 64px 48px;
+            text-align: center;
+        }
+        .section-welcome-inner {
+            max-width: 860px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .section-welcome h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-style: italic;
+            color: #1A1410;
+            margin-bottom: 24px;
+            font-weight: 400;
+        }
+        .section-welcome p {
+            font-size: 16px;
+            line-height: 1.9;
+            color: #1A1410;
+            max-width: 680px;
+            margin: 0 auto 24px;
+        }
+        .section-welcome ul {
+            list-style: none;
+            font-size: 15px;
+            line-height: 2;
+            color: #1A1410;
+            max-width: 680px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .section-welcome li {
+            margin-bottom: 8px;
+        }
+        .section-welcome strong {
+            font-weight: 400;
+        }
+        .section-summary {
+            background: #FFFFFF;
+            padding: 64px 48px;
+        }
+        .section-summary-inner {
+            max-width: 860px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .section-summary h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            color: #1A1410;
+            margin-bottom: 32px;
+            font-weight: 400;
+        }
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .summary-table tr:nth-child(even) {
+            background: #F7F4EF;
+        }
+        .summary-table td {
+            padding: 14px 16px;
+            vertical-align: top;
+        }
+        .summary-date {
+            font-size: 13px;
+            color: #C9A96E;
+            font-weight: 300;
+            white-space: nowrap;
+        }
+        .summary-title {
+            font-size: 14px;
+            color: #1A1410;
+            font-weight: 400;
+        }
+        .summary-services {
+            font-size: 13px;
+            color: #9A8B78;
+            font-weight: 300;
+        }
+        .day-header {
+            background: #1A1410;
+            padding: 20px 48px;
+        }
+        .day-header-inner {
+            max-width: 860px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .day-date {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 13px;
+            color: #C9A96E;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .day-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            color: #FFFFFF;
+            font-weight: 400;
+        }
+        .service-container {
+            background: #FFFFFF;
+            padding: 40px 48px;
+            border-bottom: 1px solid #F7F4EF;
+        }
+        .service-inner {
+            max-width: 860px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .service-optional {
+            display: inline-block;
+            font-size: 9px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            color: #9A8B78;
+            border: 1px solid #9A8B78;
+            padding: 2px 8px;
+            margin-bottom: 12px;
+        }
+        .service-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            color: #1A1410;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .service-tagline {
+            font-size: 14px;
+            font-style: italic;
+            color: #9A8B78;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        .service-logistics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            font-size: 13px;
+            color: #1A1410;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        .service-description {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #1A1410;
+            margin-bottom: 24px;
+            font-weight: 300;
+        }
+        .service-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-bottom: 16px;
+        }
+        .service-details-header {
+            font-size: 11px;
+            font-weight: 400;
+            color: #C9A96E;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .service-details ul {
+            list-style: none;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #1A1410;
+            font-weight: 300;
+        }
+        .service-details li:before {
+            content: '· ';
+            margin-right: 4px;
+        }
+        .service-notes {
+            font-size: 13px;
+            font-style: italic;
+            color: #9A8B78;
+            margin-top: 16px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        .section-hotel {
+            background: #F7F4EF;
+            padding: 64px 48px;
+        }
+        .section-hotel-inner {
+            max-width: 860px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .section-hotel h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            color: #1A1410;
+            margin-bottom: 32px;
+            font-weight: 400;
+        }
+        .hotel-card {
+            background: #FFFFFF;
+            padding: 32px;
+            border-left: 3px solid #C9A96E;
+        }
+        .hotel-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            color: #1A1410;
+            margin-bottom: 8px;
+            font-weight: 400;
+        }
+        .hotel-meta {
+            font-size: 13px;
+            color: #9A8B78;
+            margin-bottom: 12px;
+            font-weight: 300;
+        }
+        .hotel-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            font-size: 14px;
+            color: #1A1410;
+            font-weight: 300;
+        }
+        .hotel-tax {
+            font-size: 13px;
+            font-style: italic;
+            color: #9A8B78;
+            margin-top: 8px;
+            font-weight: 300;
+        }
+        .section-info {
+            background: #FFFFFF;
+            padding: 64px 48px;
+        }
+        .section-info-inner {
+            max-width: 860px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .section-info h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            color: #1A1410;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+        .section-info h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            color: #1A1410;
+            margin-bottom: 12px;
+            margin-top: 32px;
+            font-weight: 400;
+        }
+        .section-info h3:first-of-type {
+            margin-top: 0;
+        }
+        .section-info p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #1A1410;
+            margin-bottom: 12px;
+            font-weight: 300;
+        }
+        .section-info ul {
+            list-style: none;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #1A1410;
+            font-weight: 300;
+            margin-bottom: 12px;
+        }
+        .section-info li:before {
+            content: '· ';
+            margin-right: 4px;
+        }
+        .section-conditions {
+            background: #F7F4EF;
+            padding: 64px 48px;
+        }
+        .section-conditions-inner {
+            max-width: 860px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .section-conditions h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            color: #1A1410;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+        .section-conditions h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            color: #1A1410;
+            margin-bottom: 12px;
+            margin-top: 32px;
+            font-weight: 400;
+        }
+        .section-conditions h3:first-of-type {
+            margin-top: 0;
+        }
+        .section-conditions p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #1A1410;
+            margin-bottom: 12px;
+            font-weight: 300;
+        }
+        .section-conditions ul {
+            list-style: none;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #1A1410;
+            font-weight: 300;
+            margin-bottom: 12px;
+        }
+        .section-conditions li:before {
+            content: '· ';
+            margin-right: 4px;
+        }
+        .footer {
+            background: #1A1410;
+            padding: 40px 48px;
+            text-align: center;
+        }
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            color: #C9A96E;
+            letter-spacing: 3px;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .footer-tagline {
+            font-size: 12px;
+            color: #9A8B78;
+            display: block;
+            margin-bottom: 12px;
+            font-weight: 300;
+        }
+        .footer-contact {
+            font-size: 12px;
+            color: #F7F4EF;
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 300;
+        }
+        .footer-ref {
+            font-size: 11px;
+            color: #9A8B78;
+            font-weight: 300;
+        }
+        @media (max-width: 768px) {
+            .header {
+                padding: 12px 24px;
+                font-size: 11px;
+            }
+            .hero {
+                height: 360px;
+            }
+            .hero-title {
+                font-size: 36px;
+            }
+            .section-welcome,
+            .section-summary,
+            .section-hotel,
+            .section-info,
+            .section-conditions {
+                padding: 48px 24px;
+            }
+            .day-header,
+            .service-container {
+                padding: 20px 24px;
+            }
+            .service-details {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .summary-table td {
+                display: block;
+                padding: 8px 16px;
+            }
+            .summary-table tr {
+                display: block;
+                margin-bottom: 16px;
+                border-bottom: 1px solid #F7F4EF;
+            }
+            .footer {
+                padding: 40px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <div class="header-circle"></div>
+            <span>Your Local Experts in France</span>
+        </div>
+        <div class="header-right">
+            24/7 hotline: +33972301031 — emergency@deluxefrance.com
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-eyebrow">DELUXE FRANCE</div>
+            <h1 class="hero-title">John's Luberon Villages Journey</h1>
+            <div class="hero-subtitle">August 20, 2025</div>
+        </div>
+        <div class="hero-credit">Photo: Carsten Sprotte via Unsplash</div>
+    </div>
+
+    <div class="section-welcome">
+        <div class="section-welcome-inner">
+            <h2>A word before your journey</h2>
+            <p>We have built a highly efficient support system to ensure seamless coordination of every service throughout your stay. Our goal is to make your experience in France smooth, enjoyable, and worry-free.</p>
+            <ul>
+                <li><strong>24/7 Emergency Hotline:</strong> Reach us anytime at +33 9 72 30 10 31 or emergency@deluxefrance.com</li>
+                <li><strong>Real-Time Service Updates:</strong> Automated SMS 90 minutes before each service with your expert's name, mobile number, meeting time and point.</li>
+                <li><strong>Driver & Guide Assignments:</strong> Contacts shared as soon as confirmed. Airport drivers typically assigned less than 24 hours prior.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section-summary">
+        <div class="section-summary-inner">
+            <h2>Your Journey at a Glance</h2>
+            <table class="summary-table">
+                <tr>
+                    <td class="summary-date">AUGUST 20</td>
+                    <td class="summary-title">Luberon Villages Full Day Private Wine Tour</td>
+                    <td class="summary-services">Luberon Villages Full Day Private Wine Tour</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="day-header">
+        <div class="day-header-inner">
+            <div class="day-date">AUGUST 20, 2025</div>
+            <div class="day-title">Luberon Villages Full Day Private Wine Tour</div>
+        </div>
+    </div>
+
+    <div class="service-container">
+        <div class="service-inner">
+            <h3 class="service-name">Luberon Villages Full Day Private Wine Tour</h3>
+            <div class="service-tagline">Exclusive journey to the Luberon villages, the heart of Provence</div>
+            <div class="service-logistics">
+                <span>🧑 Contact via SMS 90 min before</span>
+                <span>📍 Hotel La Bastide de Gordes Hotel & Spa - Les Airelles, Rue de la Combe, 84220 Gordes, France</span>
+                <span>🏁 Hotel La Bastide de Gordes Hotel & Spa - Les Airelles, Rue de la Combe, 84220 Gordes, France</span>
+                <span>⏱ 8 hours</span>
+                <span>📞 +33 9 72 30 10 31</span>
+            </div>
+            <div class="service-description">
+                John, imagine winding through the sun-drenched hills of the Luberon, where every village perched on ancient stone tells a story of centuries past. Your private journey begins in the ochre-painted wonder of Roussillon, where the earth itself seems to glow in shades of amber and rust. You'll wander through Bonnieux and Lacoste, villages where time moves differently, where the scent of lavender and wild thyme follows you through narrow lanes. In Lourmarin, perhaps the loveliest village in all of France, you'll feel the pulse of Provençal life — café terraces, artisan shops, and the gentle rhythm of the south. Lunch awaits at the exquisite Domaine de Fontenille, where the cuisine mirrors the landscape: refined, honest, and deeply rooted in this blessed soil. Your afternoon crescendos at Château La Coste, a harmonious marriage of contemporary art, architecture, and viticulture, where every glass of wine is a conversation with the land. This is Provence at its most intimate, most generous, most unforgettable.
+            </div>
+            <div class="service-details">
+                <div>
+                    <div class="service-details-header">INCLUDED</div>
+                    <ul>
+                        <li>English-speaking knowledgeable private driver</li>
+                        <li>luxury V-Class vehicle</li>
+                        <li>private visit and tasting at Château La Coste for 1 hour</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="service-details-header">NOT INCLUDED</div>
+                    <ul>
+                        <li>Lunch at Domaine de Fontenille (booked in advance but paid on site)</li>
+                        <li>gratuities</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service-notes">
+                * Lunch at Domaine de Fontenille will be booked in advance (credit card needed for guarantee - booking under John Fairleigh) but must be paid on site. Cancellation policy: If you cancel less than 1 day before the booking or in case of no show, clients will be charged 40 EUR per person (400 EUR total). Second driver: Imad BEN MESSAOUD +33614732886.
+            </div>
+        </div>
+    </div>
+
+    <div class="section-info">
+        <div class="section-info-inner">
+            <h2>Information & Documents</h2>
+            
+            <h3>TIPPING GUIDANCE</h3>
+            <p>If you have been fully satisfied with the services provided during your stay, we recommend the following tips:</p>
+            <ul>
+                <li>Taxis: round up to the next figure</li>
+                <li>Restaurants: 10% of the total bill</li>
+                <li>Luggage: 1 to 5 euros per piece</li>
+                <li>Private transfers: 30 euros to the driver</li>
+                <li>Private greeters at the airport: 30 euros to the greeter</li>
+                <li>Private car & driver: 40-80 euros half day / 90-150 euros full day</li>
+                <li>Private guide: 40-80 euros half day / 90-150 euros full day</li>
+            </ul>
+
+            <h3>MUSEUM ENTRANCE</h3>
+            <p>All entrance tickets provided by Deluxe France include skip-the-line privileges. Security checks are mandatory and cannot be avoided.</p>
+
+            <h3>LUGGAGE IN TRAINS</h3>
+            <p>If your seats are on the upper level, keep valuables in a bag with you at all times. Electronics and jewellery should never be left out of sight.</p>
+
+            <h3>ELECTRICITY</h3>
+            <p>French electricity runs at 220 volts / 50 cycles. US appliances need an adapter and transformer.</p>
+
+            <h3>BASIC PHRASES</h3>
+            <p>Bonjour (Hello) · Merci (Thank you) · S'il vous plait (Please) · Pardon (Excuse me). Always greet with Bonjour when entering any shop, restaurant or business.</p>
+
+            <h3>TIME</h3>
+            <p>France is CET — 6 hours ahead of Eastern Daylight Time (10AM US = 4PM France). The switch between Standard and Daylight Time may not occur on the same date, reducing the difference to 5 hours during that interim period.</p>
+
+            <h3>USING PHONES IN FRANCE</h3>
+            <p>French numbers have 10 digits starting with 0. Numbers starting with 06/07 are mobile. Country code: +33.</p>
+            <ul>
+                <li>From the US: dial 011 + 33 + 9-digit number (drop the leading 0)</li>
+                <li>Within France: dial the full 10-digit number</li>
+                <li>To call the US: dial 001 + area code + number</li>
+            </ul>
+
+            <h3>USEFUL NUMBERS</h3>
+            <ul>
+                <li>Deluxe France 24/7: +33 9 72 30 10 31</li>
+                <li>Fire brigade / EMT: 18</li>
+                <li>Ambulance (SAMU): 15</li>
+                <li>Police: 17</li>
+                <li>European Emergency (English): 112</li>
+                <li>US Consulate Marseille: +33 1 43 12 48 85</li>
+                <li>US Consulate Paris: +33 1 43 12 22 22</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section-conditions">
+        <div class="section-conditions-inner">
+            <h2>Deluxe France Selling Conditions</h2>
+            
+            <h3>BOOKING & PAYMENT</h3>
+            <ul>
+                <li>Reservation confirmed only after valid credit card or deposit (30% at booking, 100% at least 45 days before service)</li>
+                <li>Rates are NET and include all taxes, fuel, parking, tolls and passenger insurance</li>
+                <li>Payment: credit card (Visa, Amex, Mastercard) or bank transfer</li>
+                <li>Entrance fees not included unless noted in proposal</li>
+                <li>20% supplement for services between 8pm and 8am — any started extra hour is fully charged</li>
+                <li>Claims for billing errors must be submitted within 8 days of service date</li>
+                <li>Jurisdiction: Commercial Court of Salon de Provence</li>
+            </ul>
+
+            <h3>CANCELLATION POLICY</h3>
+            <p><strong>Experiences
