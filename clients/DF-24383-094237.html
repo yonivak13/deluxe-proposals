@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Provence Journey | Deluxe France</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Jost', sans-serif;
+            font-weight: 300;
+            color: #1A1410;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            line-height: 1.3;
+        }
+        
+        .header {
+            background: #FFFFFF;
+            padding: 2rem 5%;
+            border-bottom: 1px solid #F7F4EF;
+        }
+        
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #1A1410;
+            letter-spacing: 2px;
+            margin-bottom: 0.3rem;
+        }
+        
+        .subtitle {
+            font-family: 'Jost', sans-serif;
+            font-weight: 300;
+            font-size: 0.85rem;
+            color: #9A8B78;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        
+        .hero {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            background-image: url('https://images.unsplash.com/photo-1566463872090-bfd2d66174e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTI2MjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzUxMTU3MTd8&ixlib=rb-4.1.0&q=80&w=1080');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #1A1410;
+            opacity: 0.4;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: #FFFFFF;
+            padding: 2rem;
+            max-width: 900px;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        
+        .hero-tagline {
+            font-size: 1.3rem;
+            font-weight: 300;
+            opacity: 0.95;
+            letter-spacing: 1px;
+        }
+        
+        .welcome {
+            background: #F7F4EF;
+            padding: 5rem 5%;
+            text-align: center;
+        }
+        
+        .welcome-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .welcome h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #1A1410;
+        }
+        
+        .welcome p {
+            font-size: 1.2rem;
+            line-height: 2;
+            color: #1A1410;
+        }
+        
+        .practical-info {
+            background: #1A1410;
+            color: #FFFFFF;
+            padding: 3rem 5%;
+        }
+        
+        .practical-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+        
+        .practical-item h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #C9A96E;
+            margin-bottom: 1rem;
+            font-family: 'Jost', sans-serif;
+            font-weight: 400;
+        }
+        
+        .practical-item p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .programme {
+            padding: 6rem 5%;
+            background: #FFFFFF;
+        }
+        
+        .programme-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .programme h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            color: #1A1410;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: #C9A96E;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 3rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -0.5rem;
+            top: 0.5rem;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: #C9A96E;
+            border: 3px solid #FFFFFF;
+            box-shadow: 0 0 0 1px #C9A96E;
+        }
+        
+        .timeline-time {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: #C9A96E;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .timeline-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #1A1410;
+        }
+        
+        .special-notes {
+            background: #F7F4EF;
+            padding: 4rem 5%;
+        }
+        
+        .special-notes-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .special-notes h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #1A1410;
+            text-align: center;
+        }
+        
+        .note-box {
+            background: #FFFFFF;
+            padding: 2rem;
+            border-left: 3px solid #C9A96E;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .footer {
+            background: #1A1410;
+            color: #FFFFFF;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+        
+        .footer h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #C9A96E;
+        }
+        
+        .footer-contact {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-contact a {
+            color: #FFFFFF;
+            text-decoration: none;
+            border-bottom: 1px solid #C9A96E;
+            transition: color 0.3s;
+        }
+        
+        .footer-contact a:hover {
+            color: #C9A96E;
+        }
+        
+        .photo-credit {
+            margin-top: 3rem;
+            font-size: 0.85rem;
+            color: #9A8B78;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-tagline {
+                font-size: 1.1rem;
+            }
+            
+            .welcome h2 {
+                font-size: 2rem;
+            }
+            
+            .welcome p {
+                font-size: 1.1rem;
+            }
+            
+            .programme h2 {
+                font-size: 2.2rem;
+            }
+            
+            .practical-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .header {
+                padding: 1.5rem 5%;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">DELUXE FRANCE</div>
+        <div class="subtitle">Votre Expérience Privée</div>
+    </div>
+    
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Provence</h1>
+            <div class="hero-tagline">Where golden light meets timeless beauty</div>
+        </div>
+    </div>
+    
+    <div class="welcome">
+        <div class="welcome-content">
+            <h2>Dear Kaylee and Austin,</h2>
+            <p>A journey to Provence is an invitation to slow down, to breathe in the scent of lavender fields and sun-warmed stone, to taste the essence of southern France in every moment. As you arrive in this land of painters and poets, we are honored to welcome you with the warmth and care that transforms travel into something truly extraordinary. Your private experience begins the moment you step off the train.</p>
+        </div>
+    </div>
+    
+    <div class="practical-info">
+        <div class="practical-grid">
+            <div class="practical-item">
+                <h3>Date</h3>
+                <p>Saturday, March 14, 2026</p>
+            </div>
+            <div class="practical-item">
+                <h3>Arrival</h3>
+                <p>14:49<br>Aix-en-Provence TGV Station</p>
+            </div>
+            <div class="practical-item">
+                <h3>Your Journey</h3>
+                <p>TGV INOUI 9877<br>First Class from Dijon<br>Coach 13</p>
+            </div>
+            <div class="practical-item">
+                <h3>Travelers</h3>
+                <p>3 guests</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="programme">
+        <div class="programme-content">
+            <h2>Your Afternoon</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-time">14:49</div>
+                    <div class="timeline-description">Your English-speaking driver awaits at the end of the platform, holding a sign with your name. As you step into the Provençal afternoon, you'll be greeted with genuine warmth and a seamless transition from train to private vehicle. We'll carefully assist with your luggage, including special arrangements for your little one.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">16:00</div>
+                    <div class="timeline-description">Arrival at Château La Gaude, where historic grandeur meets contemporary comfort. Nestled among ancient olive groves and vineyards at 3959 Route des Pinchinats, this sanctuary will be your home in Provence. The journey through the countryside is your first glimpse of the magic that awaits.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="special-notes">
+        <div class="special-notes-content">
+            <h2>Thoughtful Details</h2>
+            <div class="note-box">
+                We've arranged a child safety seat for your one-year-old, ensuring comfort and security throughout your journey. Your complete travel document with additional details awaits you at trips.deluxefrance.com/trip/itinerary/k5SSks4AZbUhBJLOAHA7wAXAw
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <h3>Une Question?</h3>
+        <div class="footer-contact">
+            <a href="mailto:info@deluxefrance.com">info@deluxefrance.com</a>
+        </div>
+        <div class="footer-contact">
+            <a href="tel:+33142865072">+33 1 42 86 50 72</a>
+        </div>
+        <div class="footer-contact">
+            <a href="https://www.deluxefrance.com" target="_blank">www.deluxefrance.com</a>
+        </div>
+        <div class="photo-credit">
+            Photography: Elisa Schmidt via Unsplash
+        </div>
+    </div>
+</body>
+</html>
