@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hannah's Avignon and Châteauneuf du Pape Journey — Deluxe France</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: 'Jost', sans-serif;
+font-weight: 300;
+color: #1A1410;
+background: #FFFFFF;
+line-height: 1.6;
+}
+.header {
+background: #FFFFFF;
+border-bottom: 1px solid #F7F4EF;
+padding: 12px 48px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 12px;
+color: #9A8B78;
+}
+.header-left {
+display: flex;
+align-items: center;
+gap: 8px;
+}
+.header-circle {
+width: 6px;
+height: 6px;
+background: #C9A96E;
+border-radius: 50%;
+}
+.header-right {
+text-align: right;
+}
+.hero {
+position: relative;
+height: 480px;
+background-image: url('https://images.unsplash.com/photo-1604238435720-37ac37ad9f1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTI2MjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzUzMzI4NTd8&ixlib=rb-4.1.0&q=80&w=1080');
+background-size: cover;
+background-position: center;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.hero-overlay {
+position: absolute;
+inset: 0;
+background: #1A1410;
+opacity: 0.45;
+}
+.hero-content {
+position: relative;
+z-index: 2;
+text-align: center;
+color: #FFFFFF;
+}
+.hero-eyebrow {
+font-size: 11px;
+letter-spacing: 4px;
+color: #C9A96E;
+margin-bottom: 16px;
+}
+.hero-title {
+font-family: 'Cormorant Garamond', serif;
+font-size: 52px;
+font-weight: 400;
+margin-bottom: 12px;
+line-height: 1.2;
+}
+.hero-subtitle {
+font-size: 14px;
+color: #F7F4EF;
+}
+.hero-credit {
+position: absolute;
+bottom: 10px;
+right: 10px;
+font-size: 10px;
+color: #9A8B78;
+opacity: 0.7;
+z-index: 2;
+}
+.welcome {
+background: #F7F4EF;
+padding: 64px 48px;
+text-align: center;
+}
+.welcome-inner {
+max-width: 860px;
+margin: 0 auto;
+width: 100%;
+}
+.welcome-title {
+font-family: 'Cormorant Garamond', serif;
+font-size: 28px;
+font-style: italic;
+color: #1A1410;
+margin-bottom: 24px;
+}
+.welcome-body {
+font-size: 16px;
+line-height: 1.9;
+color: #1A1410;
+max-width: 680px;
+margin: 0 auto 28px auto;
+}
+.welcome-body strong {
+font-weight: 400;
+display: block;
+margin-top: 20px;
+}
+.trip-summary {
+background: #FFFFFF;
+padding: 64px 48px;
+}
+.trip-summary-inner {
+max-width: 860px;
+margin: 0 auto;
+width: 100%;
+}
+.section-title {
+font-family: 'Cormorant Garamond', serif;
+font-size: 32px;
+color: #1A1410;
+margin-bottom: 32px;
+}
+.summary-table {
+width: 100%;
+border-collapse: collapse;
+}
+.summary-table tr:nth-child(even) {
+background: #F7F4EF;
+}
+.summary-table td {
+padding: 14px 16px;
+vertical-align: top;
+}
+.summary-date {
+font-size: 13px;
+color: #C9A96E;
+white-space: nowrap;
+}
+.summary-day-title {
+font-weight: 400;
+font-size: 14px;
+color: #1A1410;
+}
+.summary-services {
+font-size: 13px;
+color: #9A8B78;
+}
+.day-header {
+background: #1A1410;
+padding: 20px 48px;
+}
+.day-header-inner {
+max-width: 860px;
+margin: 0 auto;
+width: 100%;
+}
+.day-date {
+font-family: 'Cormorant Garamond', serif;
+font-size: 13px;
+color: #C9A96E;
+letter-spacing: 2px;
+text-transform: uppercase;
+margin-bottom: 4px;
+}
+.day-title {
+font-family: 'Cormorant Garamond', serif;
+font-size: 26px;
+color: #FFFFFF;
+}
+.service {
+background: #FFFFFF;
+padding: 40px 48px;
+border-bottom: 1px solid #F7F4EF;
+}
+.service-inner {
+max-width: 860px;
+margin: 0 auto;
+width: 100%;
+}
+.optional-badge {
+font-weight: 400;
+font-size: 9px;
+letter-spacing: 2px;
+color: #9A8B78;
+border: 1px solid #9A8B78;
+padding: 2px 8px;
+display: inline-block;
+margin-bottom: 12px;
+}
+.service-name {
+font-family: 'Cormorant Garamond', serif;
+font-size: 24px;
+color: #1A1410;
+font-weight: 600;
+margin-bottom: 6px;
+}
+.service-tagline {
+font-style: italic;
+font-size: 14px;
+color: #9A8B78;
+margin-bottom: 20px;
+}
+.service-logistics {
+font-size: 13px;
+color: #1A1410;
+display: flex;
+flex-wrap: wrap;
+gap: 24px;
+margin-bottom: 20px;
+}
+.service-description {
+font-size: 15px;
+line-height: 1.8;
+color: #1A1410;
+margin-bottom: 24px;
+}
+.service-details {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 32px;
+}
+.detail-col h4 {
+font-weight: 400;
+font-size: 11px;
+color: #C9A96E;
+letter-spacing: 1px;
+margin-bottom: 12px;
+}
+.detail-col p {
+font-size: 14px;
+color: #1A1410;
+margin-bottom: 8px;
+}
+.service-notes {
+font-style: italic;
+font-size: 13px;
+color: #9A8B78;
+margin-top: 16px;
+}
+.hotel-section {
+background: #F7F4EF;
+padding: 64px 48px;
+}
+.hotel-section-inner {
+max-width: 860px;
+margin: 0 auto;
+width: 100%;
+}
+.hotel-card {
+background: #FFFFFF;
+padding: 32px;
+border-left: 3px solid #C9A96E;
+}
+.hotel-name {
+font-family: 'Cormorant Garamond', serif;
+font-size: 26px;
+color: #1A1410;
+margin-bottom: 4px;
+}
+.hotel-meta {
+font-size: 13px;
+color: #9A8B78;
+margin-bottom: 12px;
+}
+.hotel-info {
+font-size: 14px;
+display: flex;
+flex-wrap: wrap;
+gap: 24px;
+margin-bottom: 8px;
+}
+.hotel-tax {
+font-style: italic;
+font-size: 13px;
+color: #9A8B78;
+margin-top: 8px;
+}
+.info-section {
+background: #FFFFFF;
+padding: 64px 48px;
+}
+.info-section-inner {
+max-width: 860px;
+margin: 0 auto;
+width: 100%;
+}
+.info-subsection {
+margin-bottom: 32px;
+}
+.info-subsection h3 {
+font-family: 'Cormorant Garamond', serif;
+font-size: 20px;
+color: #1A1410;
+margin-bottom: 12px;
+}
+.info-subsection p,
+.info-subsection ul {
+font-size: 14px;
+line-height: 1.8;
+color: #1A1410;
+}
+.info-subsection ul {
+list-style: none;
+}
+.info-subsection li {
+margin-bottom: 6px;
+}
+.conditions-section {
+background: #F7F4EF;
+padding: 64px 48px;
+}
+.conditions-section-inner {
+max-width: 860px;
+margin: 0 auto;
+width: 100%;
+}
+.footer {
+background: #1A1410;
+padding: 40px 48px;
+text-align: center;
+}
+.footer-logo {
+font-family: 'Cormorant Garamond', serif;
+font-size: 18px;
+color: #C9A96E;
+letter-spacing: 3px;
+display: block;
+margin-bottom: 8px;
+}
+.footer-tagline {
+font-size: 12px;
+color: #9A8B78;
+display: block;
+margin-bottom: 12px;
+}
+.footer-contact {
+font-size: 12px;
+color: #F7F4EF;
+display: block;
+margin-bottom: 8px;
+}
+.footer-ref {
+font-size: 11px;
+color: #9A8B78;
+}
+@media (max-width: 768px) {
+.header {
+padding: 12px 24px;
+flex-direction: column;
+gap: 8px;
+text-align: center;
+}
+.hero {
+height: 360px;
+}
+.hero-title {
+font-size: 36px;
+padding: 0 24px;
+}
+.welcome,
+.trip-summary,
+.day-header,
+.service,
+.hotel-section,
+.info-section,
+.conditions-section,
+.footer {
+padding: 48px 24px;
+}
+.service-details {
+grid-template-columns: 1fr;
+gap: 24px;
+}
+.service-logistics {
+flex-direction: column;
+gap: 12px;
+}
+.hotel-info {
+flex-direction: column;
+gap: 8px;
+}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+<div class="header-left">
+<div class="header-circle"></div>
+<span>Your Local Experts in France</span>
+</div>
+<div class="header-right">
+24/7 hotline: +33972301031 — emergency@deluxefrance.com
+</div>
+</div>
+
+<div class="hero">
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div class="hero-eyebrow">DELUXE FRANCE</div>
+<h1 class="hero-title">Hannah's Avignon and Châteauneuf du Pape Journey</h1>
+<div class="hero-subtitle">September 27, 2025 — September 27, 2025</div>
+</div>
+<div class="hero-credit">Photo: Mona Hamm via Unsplash</div>
+</div>
+
+<div class="welcome">
+<div class="welcome-inner">
+<h2 class="welcome-title">A word before your journey</h2>
+<div class="welcome-body">
+<p>We have built a highly efficient support system to ensure seamless coordination of every service throughout your stay. Our goal is to make your experience in France smooth, enjoyable, and worry-free.</p>
+<strong>• 24/7 Emergency Hotline: Reach us anytime at +33 9 72 30 10 31 or emergency@deluxefrance.com</strong>
+<strong>• Real-Time Service Updates: Automated SMS 90 minutes before each service with your expert's name, mobile number, meeting time and point.</strong>
+<strong>• Driver & Guide Assignments: Contacts shared as soon as confirmed. Airport drivers typically assigned less than 24 hours prior.</strong>
+</div>
+</div>
+</div>
+
+<div class="trip-summary">
+<div class="trip-summary-inner">
+<h2 class="section-title">Your Journey at a Glance</h2>
+<table class="summary-table">
+<tr>
+<td class="summary-date">Sep 27, 2025</td>
+<td class="summary-day-title">Full Day Avignon & Châteauneuf du Pape Wine Tour</td>
+<td class="summary-services">Full Day Avignon & Châteauneuf du Pape Tour</td>
+</tr>
+</table>
+</div>
+</div>
+
+<div class="day-header">
+<div class="day-header-inner">
+<div class="day-date">September 27, 2025</div>
+<div class="day-title">Full Day Avignon & Châteauneuf du Pape Wine Tour</div>
+</div>
+</div>
+
+<div class="service">
+<div class="service-inner">
+<h3 class="service-name">Full Day Avignon & Châteauneuf du Pape Tour</h3>
+<p class="service-tagline">Private wine tour with knowledgeable English-speaking driver</p>
+<div class="service-logistics">
+<span>🧑 Contact via SMS 90 min before</span>
+<span>📍 Hotel La Coquillade, Perrotet, 84400 Gargas, France</span>
+<span>🏁 Hotel La Coquillade, Perrotet, 84400 Gargas, France</span>
+<span>⏱ 8 hours</span>
+<span>📞 +33 9 72 30 10 31</span>
+</div>
+<div class="service-description">
+Hannah, imagine yourself wandering the ancient papal streets of Avignon, where stone ramparts whisper centuries of history beneath a Provençal sky. Then picture sun-drenched vineyards stretching across the legendary Châteauneuf du Pape terroir, where each sip tells the story of the land. Today, you and your companions will glide through this timeless landscape in the comfort of a luxury Mercedes V-Class, guided by your knowledgeable English-speaking driver who knows these roads and stories by heart. You'll visit the intimate Caves Saint Charles, where the winemaker's passion is poured into every glass, and the esteemed Domaine de la Barroche, where tradition and elegance meet. Between tastings, a leisurely lunch at Comptoir de la Mère Germaine awaits — a moment to savor the flavors of Provence, surrounded by the warmth of the region. This is a day to let the rhythms of Provence slow time and fill your senses.
+</div>
+<div class="service-details">
+<div class="detail-col">
+<h4>INCLUDED</h4>
+<p>· Private English-speaking knowledgeable driver for 8 hours</p>
+<p>· Luxury Mercedes V-Class vehicle</p>
+<p>· Pick-up and drop-off at hotel</p>
+<p>· Lunch reservation at Comptoir de la Mère Germaine</p>
+</div>
+<div class="detail-col">
+<h4>NOT INCLUDED</h4>
+<p>· Wine tasting fees (20 EUR per person at Caves Saint Charles, 15 EUR per person at Domaine de la Barroche - to be paid on site)</p>
+<p>· Lunch cost (to be paid on site)</p>
+<p>· Gratuity</p>
+</div>
+</div>
+<p class="service-notes">* Tasting fees: 20 EUR/person at Caves Saint Charles and 15 EUR/person at Domaine de la Barroche, payable directly on site. Lunch reservation is made by Deluxe France but payment is client responsibility on site.</p>
+</div>
+</div>
+
+<div class="info-section">
+<div class="info-section-inner">
+<h2 class="section-title">Information & Documents</h2>
+
+<div class="info-subsection">
+<h3>TIPPING GUIDANCE</h3>
+<p>If you have been fully satisfied with the services provided during your stay, we recommend the following tips:</p>
+<ul>
+<li>· Taxis: round up to the next figure</li>
+<li>· Restaurants: 10% of the total bill</li>
+<li>· Luggage: 1 to 5 euros per piece</li>
+<li>· Private transfers: 30 euros to the driver</li>
+<li>· Private greeters at the airport: 30 euros to the greeter</li>
+<li>· Private car & driver: 40-80 euros half day / 90-150 euros full day</li>
+<li>· Private guide: 40-80 euros half day / 90-150 euros full day</li>
+</ul>
+</div>
+
+<div class="info-subsection">
+<h3>MUSEUM ENTRANCE</h3>
+<p>All entrance tickets provided by Deluxe France include skip-the-line privileges. Security checks are mandatory and cannot be avoided.</p>
+</div>
+
+<div class="info-subsection">
+<h3>LUGGAGE IN TRAINS</h3>
+<p>If your seats are on the upper level, keep valuables in a bag with you at all times. Electronics and jewellery should never be left out of sight.</p>
+</div>
+
+<div class="info-subsection">
+<h3>ELECTRICITY</h3>
+<p>French electricity runs at 220 volts / 50 cycles. US appliances need an adapter and transformer.</p>
+</div>
+
+<div class="info-subsection">
+<h3>BASIC PHRASES</h3>
+<p>Bonjour (Hello) · Merci (Thank you) · S'il vous plait (Please) · Pardon (Excuse me). Always greet with Bonjour when entering any shop, restaurant or business.</p>
+</div>
+
+<div class="info-subsection">
+<h3>TIME</h3>
+<p>France is CET — 6 hours ahead of Eastern Daylight Time (10AM US = 4PM France). The switch between Standard and Daylight Time may not occur on the same date, reducing the difference to 5 hours during that interim period.</p>
+</div>
+
+<div class="info-subsection">
+<h3>USING PHONES IN FRANCE</h3>
+<p>French numbers have 10 digits starting with 0. Numbers starting with 06/07 are mobile. Country code: +33.</p>
+<ul>
+<li>· From the US: dial 011 + 33 + 9-digit number (drop the leading 0)</li>
+<li>· Within France: dial the full 10-digit number</li>
+<li>· To call the US: dial 001 + area code + number</li>
+</ul>
+</div>
+
+<div class="info-subsection">
+<h3>USEFUL NUMBERS</h3>
+<ul>
+<li>· Deluxe France 24/7: +33 9 72 30 10 31</li>
+<li>· Fire brigade / EMT: 18</li>
+<li>· Ambulance (SAMU): 15</li>
+<li>· Police: 17</li>
+<li>· European Emergency (English): 112</li>
+<li>· US Consulate Marseille: +33 1 43 12 48 85</li>
+<li>· US Consulate Paris: +33 1 43 12 22 22</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+<div class="conditions-section">
+<div class="conditions-section-inner">
+<h2 class="section-title">Deluxe France Selling Conditions</h2>
+
+<div class="info-subsection">
+<h3>BOOKING & PAYMENT</h3>
+<ul>
+<li>· Reservation confirmed only after valid credit card or deposit (30% at booking, 100% at least 45 days before service)</li>
+<li>· Rates are NET and include all taxes, fuel, parking, tolls and passenger insurance</li>
+<li>· Payment: credit card (Visa, Amex, Mastercard) or bank transfer</li>
+<li>· Entrance fees not included unless noted in proposal</li>
+<li>· 20% supplement for services between 8pm and 8am — any started extra hour is fully charged</li>
+<li>· Claims for billing errors must be submitted within 8 days of service date</li>
+<li>· Jurisdiction: Commercial Court of Salon de Provence</li>
+</ul>
+</div>
+
+<div class="info-subsection">
+<h3>CANCELLATION POLICY</h3>
+<p><strong>Experiences & Tours (including at-disposal services):</strong></p>
+<ul>
+<li>· Prior to 45 days: 70% refund, 30% cancellation fee</li>
+<li>· Within 45 days: 100% cancellation fee</li>
+</ul>
+<p><strong>Airport & Train Station Transfers:</strong></p>
+<ul>
+<li>· Prior to 72 hours: 100% refund</li>
+<li>· Within 72 hours: 100% cancellation fee</li>
+<li>· If more than 1 vehicle or Sprinter: Tours policy applies</li>
+</ul>
+<p><strong>Long-Distance Transfers (over 1 hour):</strong></p>
+<ul>
+<li>· Prior to 7 days: 100% refund</li>
+<li>· Within 7 days: 100% cancellation fee</li>
+</ul>
+<p><strong>Meet & Greet Services:</strong></p>
+<ul>
+<li>· Prior to 24 hours: 100% refund</li>
+<li>· Within 24 hours: 100% cancellation fee</li>
+</ul>
+<p><strong>Boats & Cruises:</strong></p>
+<p>The captain decides if conditions are suitable. If cancelled by supplier: full refund or reschedule. If client cancels despite acceptable conditions: no refund.</p>
+<p>Non-refundable: all tickets (train, museum, activities), restaurant booking fees, helicopters, private jets.</p>
+<p>Force majeure (museum strikes, closures): non-refundable if a reasonable alternative is offered and declined.</p>
+</div>
+
+<div class="info-subsection">
+<h3>RESPONSIBILITY & INSURANCE</h3>
+<ul>
+<li>· Deluxe France is not responsible for delays due to traffic, strikes, weather or force majeure</li>
+<li>· Baggage limited to 30kg per passenger — remains passenger's responsibility</li>
+<li>· Responsibility limited to insurance contract clauses</li>
+<li>· To confirm service: return quotation signed with 'Agreed and Accepted'</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+<div class="footer">
+<span class="footer-logo">DELUXE FRANCE</span>
+<span class="footer-tagline">Your Local Experts in France</span>
+<span class="footer-contact">info@deluxefrance.com · +33 9 72 30 10 31 · deluxefrance.com</span>
+<span class="footer-ref">Ref. DF-22971</span>
+</div>
+
+</body>
+</html>
